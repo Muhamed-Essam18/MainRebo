@@ -118,7 +118,9 @@ const heads = [
     ],
   },
 ];
-let initialState: {} = {};
+type ToggleState = Record<string, boolean>;
+type DetailsRefs = Record<string, HTMLDivElement | null>;
+let initialState: ToggleState = {};
 heads.forEach((obj) =>
   obj.titles.forEach((title) => {
     initialState[title.id] = false;
@@ -126,20 +128,18 @@ heads.forEach((obj) =>
 );
 
 const ResumeHeads = (props: { compId: string }) => {
-  const detailsRef = useRef({});
-  const [btntoogle, setBtntoogle] = useState(initialState);
-  useEffect(
-    () =>
-      Object.keys(btntoogle).forEach((key) => {
-        if (btntoogle[key] && detailsRef.current[key]) {
-          detailsRef.current[key].scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      }),
-    [btntoogle]
-  );
+  const detailsRef = useRef<DetailsRefs>({});
+  const [btntoogle, setBtntoogle] = useState<ToggleState>(initialState);
+  useEffect(() => {
+    Object.keys(btntoogle).forEach((key) => {
+      if (btntoogle[key] && detailsRef.current[key]) {
+        detailsRef.current[key]?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  }, [btntoogle]);
 
   const clickedComponent = heads.find((head) => head.id === props.compId);
   let content;
@@ -152,7 +152,9 @@ const ResumeHeads = (props: { compId: string }) => {
         </div>
         {clickedComponent?.titles?.map((selectedTitle) => (
           <div
-            ref={(el) => (detailsRef.current[selectedTitle.id] = el)}
+            ref={(el) => {
+              detailsRef.current[selectedTitle.id] = el;
+            }}
             key={selectedTitle.id}
             className="w-full min-h-20 h-auto bg-cyan-900/20 hover:bg-cyan-900/50 text-cyan-50 mt-5 flex flex-col justify-between items-center pl-5 rounded-lg p-5 transition-all duration-500"
           >
@@ -193,10 +195,12 @@ const ResumeHeads = (props: { compId: string }) => {
             {clickedComponent?.head?.text}
           </h1>
           <div className=" text-cyan-50 text-center text-lg md:max-w-3/4 flex flex-col items-center justify-center mt-10 ">
-            {clickedComponent?.details.map((obj) => {
+            {clickedComponent?.details?.map((obj, key) => {
               if (clickedComponent?.details.length < 2) {
                 return (
-                  <div className=" text-red-50 text-center text-lg">{obj}</div>
+                  <div key={key} className=" text-cyan-50 text-center text-lg">
+                    {obj}
+                  </div>
                 );
               } else {
                 return <li className="m-0 p-0">{obj}</li>;

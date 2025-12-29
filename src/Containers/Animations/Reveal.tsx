@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-
-export default function Reveal({ children }) {
+import type { ReactNode } from "react";
+type RevealProps = {
+  children: ReactNode;
+};
+export default function Reveal({ children }: RevealProps) {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
   const options = { threshold: 0.2 };

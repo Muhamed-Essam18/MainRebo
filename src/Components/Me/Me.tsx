@@ -1,15 +1,15 @@
-import { useRef } from "react";
 import Tools from "../Tools/Tools";
+
 import Reveal from "../../Containers/Animations/Reveal";
 import me from "../../assets/imgs/Me.jpg";
 const Me = () => {
   return (
     <Reveal>
-      <section className="relative min-h-[100dvh] space-y-5 text-center pt-20 pb-[clamp(56px,10vw,56px)]  sm:pt-20 w-9/10 m-auto  block">
+      <section className="relative min-h-dvh space-y-5 text-center pt-20 pb-[clamp(56px,10vw,56px)]  sm:pt-20 w-9/10 m-auto  block">
         <h3 className="text-3xl text-gray-400 ">Hi I'm ...</h3>
 
         <Reveal>
-          <h1 className="md:text-[90px] text-[clamp(56px,7vw,56px)] leading-14 pb-2 font-bold bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="md:text-[90px] text-[clamp(56px,7vw,56px)] leading-14 sm:leading-[70px] pb-2 font-bold bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
             Muhamed Essam
           </h1>
         </Reveal>

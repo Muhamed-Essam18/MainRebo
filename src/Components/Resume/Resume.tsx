@@ -20,7 +20,7 @@ const ResumeContent = [
   },
   {
     id: "volunteer",
-    title: "Voulenteering",
+    title: "volunteering",
     icon: ResumeIcons["volunteer"],
   },
   { id: "languages", title: "Languages", icon: ResumeIcons["languages"] },
@@ -43,9 +43,8 @@ const Resume = () => {
   }, [ShowDetails]);
 
   useEffect(() => {
-    let timer;
     if (shouldRender) {
-      timer = setTimeout(() => {
+      setTimeout(() => {
         setShowDetails(true);
         document.body.style.overflow = "hidden";
       });
@@ -59,7 +58,7 @@ const Resume = () => {
         <section className="relative block xsm:pt-30">
           <h1
             id="resume"
-            className="w-90 md:pb-15 pb-5 m-auto text-center text-[45px] md:text-[50px] font-bold bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent"
+            className="w-90 md:pb-15 pb-5 m-auto text-center text-[45px] md:text-[50px] font-bold bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent"
           >
             About Me
           </h1>
@@ -73,7 +72,7 @@ const Resume = () => {
                   setClickedId(cont.id);
                 }}
               >
-                <h1 className="font-bold text-center text-white group-hover:text-gray-300 flex flex-row items-center  gap-2 text-sm md:text-md">
+                <h1 className="font-bold text-center text-white group-hover:text-gray-300 flex flex-row items-center  gap-2 text-sm md:text-lg">
                   <div className="text-2xl">{cont.icon}</div>
                   {cont.title}
                 </h1>
@@ -86,8 +85,8 @@ const Resume = () => {
         <>
           <div
             className={`${
-              ShowDetails ? "opacity-100" : "opacity-0"
-            } transition-all duration-300 overflow-auto`}
+              ShowDetails ? "opacity-100" : "opacity-0 "
+            } transition-all duration-300  overflow-auto ease-in-out`}
           >
             <OverLay
               clicked={() => {
@@ -95,7 +94,7 @@ const Resume = () => {
               }}
             />
             <div
-              className={`m-auto md:max-w-3/4 max-h-[100vh] sm:max-h-[90vh] bg-[#111827]/80 backdrop-blur-sm fixed inset-0 flex flex-col justify-start items-center transition-all duration-300 z-20 overflow-y-auto overflow-x-hidden rounded-lg p-5`}
+              className={`m-auto md:max-w-3/4 max-h-screen sm:max-h-[90vh] bg-[#111827]/80 backdrop-blur-sm fixed inset-0 flex flex-col justify-start items-center transition-all duration-300 z-20 overflow-y-auto overflow-x-hidden rounded-lg p-5`}
             >
               <button className="ml-auto" onClick={() => setShowDetails(false)}>
                 <MdOutlineCancel className="w-8 h-8 text-white cursor-pointer hover:text-red-500 hover:animate-pulse" />

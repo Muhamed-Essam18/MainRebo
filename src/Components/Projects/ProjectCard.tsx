@@ -1,8 +1,7 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/effect-cards";
+
 import { Navigation, Autoplay, EffectCards } from "swiper/modules";
 import Reveal from "../../Containers/Animations/Reveal";
 import img1 from "../../assets/imgs/1.png";
@@ -13,7 +12,14 @@ import img3 from "../../assets/imgs/3.png";
 import img3Mobile from "../../assets/imgs/3-mobile.png";
 import img4 from "../../assets/imgs/4.png";
 
-const Proj = [
+interface Project {
+  id: number;
+  img: string;
+  imgMobile: any;
+  title: string;
+  tech: string[];
+}
+const Proj: Project[] = [
   {
     id: 1,
     img: img1,
@@ -38,12 +44,15 @@ const Proj = [
   {
     id: 4,
     img: img4,
+    imgMobile: null,
     title: "Guess The Word Game",
     tech: ["Html5", "CSS3", "Java Script"],
   },
 ];
-
-const techpics = {
+interface TECH {
+  [key: string]: string;
+}
+const techpics: TECH = {
   Html5:
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
   CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
@@ -76,13 +85,15 @@ const ProjectCard = () => {
           <SwiperSlide key={project.id}>
             <a
               href="https://google.com"
-              className={`bg-white rounded-2xl h-120 hover:shadow-xl flex flex-col justify-end relative transition-all duration-500 md:bg-[image:var(--desktop-img)]   bg-[image:var(--mobile-img)] `}
-              style={{
-                "--desktop-img": `url(${project.img})`,
-                "--mobile-img": `url(${project.imgMobile})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
+              className={`bg-white rounded-2xl h-120 hover:shadow-xl flex flex-col justify-end relative transition-all duration-500 md:bg-(image:--desktop-img)   bg-(image:--mobile-img) `}
+              style={
+                {
+                  "--desktop-img": `url(${project.img})`,
+                  "--mobile-img": `url(${project.imgMobile})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                } as React.CSSProperties
+              }
             >
               <div className="absolute inset-0 bg-black opacity-50 hover:opacity-70 rounded-2xl transition-opacity duration-300"></div>
               <div className="z-10 pointer-events-none px-3 py-2">

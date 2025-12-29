@@ -32,7 +32,7 @@ export default function Timeline() {
     <Reveal>
       {" "}
       <section className="md:w-2/3 w-[95%] m-auto mt-32">
-        <h2 className="text-[45px] md:text-[50px] font-bold text-center mb-3 bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
+        <h2 className="text-[45px] md:text-[50px] font-bold text-center mb-3 bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
           Development Process
         </h2>
         <p className="mid:text-xl text-center text-gray-400 mb-15">
@@ -60,7 +60,7 @@ export default function Timeline() {
               </div>
 
               <div className="relative z-10 order-2 ml-2.5 md:m-0">
-                <span className="block w-5 h-5 bg-gradient-to-r from-red-500 to-blue-500 rounded-full"></span>
+                <span className="block w-5 h-5 bg-linear-to-r from-red-500 to-blue-500 rounded-full"></span>
               </div>
 
               <div className="hidden md:block w-1/2 order-1 md:order-3"></div>

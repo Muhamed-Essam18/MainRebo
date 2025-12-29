@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../../Components/Footer/Footer";
 import Me from "../../Components/Me/Me";
 import Projects from "../../Components/Projects/Projects";

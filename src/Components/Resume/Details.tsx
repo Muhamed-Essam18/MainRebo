@@ -84,7 +84,7 @@ const details = [
     ],
   },
 ];
-const Details = (props) => {
+const Details = (props: { id: string }) => {
   const id = props.id;
   const match = details.find((x) => x.id === id);
   let content;

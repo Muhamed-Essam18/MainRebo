@@ -1,52 +1,50 @@
-import React from "react";
+import React, { useRef } from "react";
+import type { FormEvent } from "react";
 import emailjs from "emailjs-com";
-import img from "../../assets/imgs/Me.jpg";
 import Reveal from "../../Containers/Animations/Reveal";
-import { useRef } from "react";
 
-const ContactForm = () => {
-  const sendEmail = (e) => {
+const ContactForm: React.FC = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!formRef.current) return;
+
     emailjs
+
       .sendForm(
-        "service_9eedn5l",
-        "template_bfw0xb2",
-        e.target,
-        "Y7s6onC-24cgxd2xv"
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Message sent successfully!");
-          e.target.reset();
-        },
-        (error) => {
-          console.log(error.text);
-          alert(error.text);
-        }
-      );
+      .then(() => {
+        alert("Message sent successfully!");
+        formRef.current?.reset();
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Failed to send message");
+      });
   };
-  const ref = useRef(null);
-  console.log(ref.current);
+  console.log("SERVICE:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+  console.log("TEMPLATE:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+  console.log("PUBLIC:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   return (
     <Reveal>
       <section className="py-20" id="contact">
-        {/* Title */}
-        <h1 className="m-auto md:w-1/3 text-[45px] md:text-[50px] font-bold text-center pb-8 bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
+        <h1 className="m-auto md:w-1/3 text-[45px] md:text-[50px] font-bold text-center pb-8 bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
           Contact Me
         </h1>
 
         <div className="w-full flex flex-col items-center gap-10">
-          {/* Avatar */}
-
-          {/* Form */}
           <form
+            ref={formRef}
             onSubmit={sendEmail}
             className="w-full md:w-2/3 lg:w-1/2 flex flex-col gap-4 bg-gray-800 px-8 py-6 rounded-xl"
           >
             <input
-              ref={ref}
               type="text"
               name="user_name"
               placeholder="Your Name"
