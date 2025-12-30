@@ -31,11 +31,11 @@ export default function Timeline() {
   return (
     <Reveal>
       {" "}
-      <section className="md:w-2/3 w-[95%] m-auto mt-32">
-        <h2 className="text-[45px] md:text-[50px] font-bold text-center mb-3 bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
+      <section className="md:w-2/3 w-[95%] m-auto pt-25">
+        <h2 className="text-[45px] md:text-[50px] font-bold w[95%] leading-12 md:leading-normal text-center mb-3 bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
           Development Process
         </h2>
-        <p className="mid:text-xl text-center text-gray-400 mb-15">
+        <p className="mid:text-xl text-xl text-center w-[95%] m-auto  text-gray-400 pb-15">
           "From planning to deployment, these are the key phases I follow to
           build my front-end projects efficiently"
         </p>

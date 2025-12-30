@@ -79,7 +79,7 @@ const ProjectCard = () => {
           clickable: true,
         }}
         modules={[Navigation, Autoplay, EffectCards]}
-        className="w-2/3 mx-auto"
+        className="w-[90%] md:w-2/3  mx-auto"
       >
         {Proj.map((project) => (
           <SwiperSlide key={project.id}>

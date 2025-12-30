@@ -55,10 +55,10 @@ const Resume = () => {
   return (
     <>
       <Reveal>
-        <section className="relative block xsm:pt-30">
+        <section className="relative block pb-16 md:pb-30">
           <h1
             id="resume"
-            className="w-90 md:pb-15 pb-5 m-auto text-center text-[45px] md:text-[50px] font-bold bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent"
+            className="w-90 md:pb-15 pb-10 m-auto text-center text-[45px] md:text-[50px] font-bold bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent"
           >
             About Me
           </h1>

@@ -36,7 +36,7 @@ const Tools = () => {
       <div key={tool.id} className={`${tool.name} hover:animate-pulse group`}>
         <img
           src={tool.img}
-          className="md:w-24 md:h-24 w-16 h-14 group-hover:w-28 group-hover:h-28 transition-all duration-300 "
+          className="md:w-24 md:h-24 w-17 h-14 group-hover:w-28 group-hover:h-28 transition-all duration-300 "
         />
         <h2 className="md:mt-5 md:text-lg text-white mt-2 font-bold text-[13px]">
           {tool.name}
@@ -46,7 +46,7 @@ const Tools = () => {
   });
   return (
     <>
-      <div className="md:grid-cols-6 md:pt-10 w-1/2 pt-10 m-auto grid grid-cols-3 gap-5 justify-center justify-items-center">
+      <div className="md:grid-cols-6 md:pt-10 w-2/3 md:w-1/2 pt-3 m-auto grid grid-cols-3 gap-3 sm:gap-6 justify-center justify-items-center">
         {final}
       </div>
     </>
