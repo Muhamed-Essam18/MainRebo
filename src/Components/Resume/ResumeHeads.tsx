@@ -170,7 +170,7 @@ const ResumeHeads = (props: { compId: any }) => {
   if (clickedComponent?.type === "expandable") {
     content = (
       <>
-        <div className="text-center font-bold text-2xl md:text-4xl mt-5 sm:mt-10 text-red-50 pb-5 flex flex-row justify-center items-center">
+        <div className="text-center font-bold text-2xl md:text-4xl mt-5 sm:mt-10 text-cyan-50 pb-5 flex flex-row justify-center items-center">
           <div className="mt-1 mr-2">{clickedComponent.head.icon}</div>{" "}
           {clickedComponent?.head?.text}
         </div>
@@ -214,7 +214,7 @@ const ResumeHeads = (props: { compId: any }) => {
     content = (
       <>
         <div className="w-full bg-cyan-900/20 text-cyan-50 mt-5 flex flex-col justify-start items-center rounded-lg pb-15 transition-all duration-500">
-          <h1 className="text-center font-bold text-cyan-50 text-4xl mt-10 flex flex-row items-center justify-center gap-2">
+          <h1 className="text-center font-bold text-2xl md:text-4xl mt-5 sm:mt-10 text-cyan-50  flex flex-row items-center justify-center gap-2">
             <div className="mt-1.5">{clickedComponent?.head?.icon}</div>
             {clickedComponent?.head?.text}
           </h1>
