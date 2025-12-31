@@ -37,6 +37,4 @@ html {
   transform: translateY(0);
   transition: all 0.9s ease;
 }
-div {
-  word-break: break-all;
-}
+
