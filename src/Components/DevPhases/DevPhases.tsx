@@ -50,7 +50,7 @@ export default function Timeline() {
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
-              <div className="md:w-1/2 w-3/4  px-6  order-3 md:order-1">
+              <div className="md:w-1/2 w-[90%] px-6  order-3 md:order-1">
                 <div className="bg-gray-800/70  p-6 rounded-xl shadow-lg ">
                   <h3 className="text-xl font-bold text-white">
                     {phase.title}{" "}
