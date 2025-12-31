@@ -28,7 +28,7 @@ const Proj: Project[] = [
     img: img1,
     imgMobile: img1Mobile,
     title: "YUMYUM",
-    link: "",
+    link: "yumyum-sigma.vercel.app",
     tech: ["Html5", "CSS3", "Java Script", "Bootstrab"],
   },
   {
@@ -79,13 +79,11 @@ const ProjectCard = () => {
         threshold={5}
         longSwipesRatio={0.3}
         longSwipesMs={300}
-        dir="rtl"
+        dir="ltr"
         slidesPerView={1}
         spaceBetween={30}
-        loop={true}
         effect={"cards"}
         grabCursor={true}
-        centeredSlides={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

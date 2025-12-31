@@ -12,7 +12,7 @@ const Me = () => {
 
         <Reveal>
           <h1 className="md:text-[90px] text-[clamp(38px,7vw,56px)]  pb-2 font-bold bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
-            Muhamed Essam
+            {"<Muhamed Essam />"}
           </h1>
         </Reveal>
         <img className="m-auto w-30 h-30 rounded-full mb-7" src={me}></img>
