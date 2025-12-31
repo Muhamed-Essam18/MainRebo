@@ -61,7 +61,17 @@ const heads = [
     head: { text: "Contact", icon: ResumeIcons["contact"] },
     details: [
       "Email: muhamedessam18@gmail.com",
-      "LinkedIn: https://www.linkedin.com/in/muhamed-essam9a8983247",
+      <>
+        LinkedIn:
+        <a
+          href="https://www.linkedin.com/in/muhamed-essam9a8983247"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-cyan-400 underline hover:text-cyan-300 transition ml-1 break-all"
+        >
+          linkedin.com/in/muhamed-essam
+        </a>
+      </>,
       "Phone: +201272570775",
       "Location: Alexandria, Egypt",
     ],
@@ -221,7 +231,7 @@ const ResumeHeads = (props: { compId: any }) => {
                 );
               } else {
                 return (
-                  <h1 className="text-cyan-50 text-center text-[16px] md:text-lg w-[90%] p-3">
+                  <h1 className="text-cyan-50 text-center text-[16px] md:text-lg w-[90%] m-auto p-3 break-all">
                     <li className="list-inside">{obj}</li>
                   </h1>
                 );
