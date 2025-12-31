@@ -73,6 +73,12 @@ const ProjectCard = () => {
   return (
     <Reveal>
       <Swiper
+        speed={600}
+        resistanceRatio={0.85}
+        touchRatio={1.2}
+        threshold={5}
+        longSwipesRatio={0.3}
+        longSwipesMs={300}
         dir="rtl"
         slidesPerView={1}
         spaceBetween={30}
@@ -83,9 +89,6 @@ const ProjectCard = () => {
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
         }}
         modules={[Navigation, Autoplay, EffectCards, Pagination]}
         className="mySwiper w-[90%] md:w-2/3  mx-auto"
