@@ -212,7 +212,10 @@ const ResumeHeads = (props: { compId: any }) => {
             {clickedComponent?.details?.map((obj, key) => {
               if (clickedComponent?.details.length < 2) {
                 return (
-                  <div key={key} className=" text-cyan-50 text-center text-lg">
+                  <div
+                    key={key}
+                    className=" text-cyan-50 text-center text-[16px] md:text-lg w-[90%]"
+                  >
                     {obj}
                   </div>
                 );
