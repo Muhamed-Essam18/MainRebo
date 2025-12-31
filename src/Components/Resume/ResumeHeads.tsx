@@ -208,7 +208,7 @@ const ResumeHeads = (props: { compId: any }) => {
             <div className="mt-1.5">{clickedComponent?.head?.icon}</div>
             {clickedComponent?.head?.text}
           </h1>
-          <div className=" text-cyan-50 text-center text-lg md:max-w-3/4 flex flex-col items-center justify-center mt-10 ">
+          <div className=" text-cyan-50 text-center text-lg flex flex-col items-center justify-center mt-10 w-[90%]">
             {clickedComponent?.details?.map((obj, key) => {
               if (clickedComponent?.details.length < 2) {
                 return (
@@ -220,7 +220,11 @@ const ResumeHeads = (props: { compId: any }) => {
                   </div>
                 );
               } else {
-                return <li className="m-0 p-0">{obj}</li>;
+                return (
+                  <h1 className="text-cyan-50 text-center text-[16px] md:text-lg w-[90%] p-3">
+                    <li className="list-inside">{obj}</li>
+                  </h1>
+                );
               }
             })}
           </div>
