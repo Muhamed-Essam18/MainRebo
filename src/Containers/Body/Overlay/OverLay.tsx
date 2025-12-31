@@ -5,7 +5,7 @@ const OverLay = (props: {
 }) => {
   return (
     <div
-      className="min-h-screen min-w-screen bg-black opacity-30 fixed inset-0 z-10"
+      className="min-h-screen min-w-screen bg-black opacity-60 fixed inset-0 z-10"
       onClick={props.clicked}
     ></div>
   );

@@ -11,12 +11,14 @@ import img2Mobile from "../../assets/imgs/2-mobile.png";
 import img3 from "../../assets/imgs/3.png";
 import img3Mobile from "../../assets/imgs/3-mobile.png";
 import img4 from "../../assets/imgs/4.png";
+import img4Mobile from "../../assets/imgs/4-mobile.png";
 
 interface Project {
   id: number;
   img: string;
   imgMobile: any;
   title: string;
+  link: string;
   tech: string[];
 }
 const Proj: Project[] = [
@@ -25,6 +27,7 @@ const Proj: Project[] = [
     img: img1,
     imgMobile: img1Mobile,
     title: "YUMYUM",
+    link: "",
     tech: ["Html5", "CSS3", "Java Script", "Bootstrab"],
   },
   {
@@ -32,6 +35,7 @@ const Proj: Project[] = [
     img: img2,
     imgMobile: img2Mobile,
     title: "Y2B",
+    link: "",
     tech: ["Html5", "CSS3", "Java Script"],
   },
   {
@@ -39,13 +43,15 @@ const Proj: Project[] = [
     img: img3,
     imgMobile: img3Mobile,
     title: "Momentum 25",
+    link: "https://momentum-snowy-alpha.vercel.app/",
     tech: ["Html5", "CSS3", "Java Script"],
   },
   {
     id: 4,
     img: img4,
-    imgMobile: null,
-    title: "Guess The Word Game",
+    imgMobile: img4Mobile,
+    title: "Spirit",
+    link: "https://spirit-iota-one.vercel.app/",
     tech: ["Html5", "CSS3", "Java Script"],
   },
 ];
@@ -79,12 +85,12 @@ const ProjectCard = () => {
           clickable: true,
         }}
         modules={[Navigation, Autoplay, EffectCards]}
-        className="w-[90%] md:w-2/3  mx-auto"
+        className="mySwiper w-[90%] md:w-2/3  mx-auto"
       >
         {Proj.map((project) => (
           <SwiperSlide key={project.id}>
             <a
-              href="https://google.com"
+              href={project.link}
               className={`bg-white rounded-2xl h-120 hover:shadow-xl flex flex-col justify-end relative transition-all duration-500 md:bg-(image:--desktop-img)   bg-(image:--mobile-img) `}
               style={
                 {

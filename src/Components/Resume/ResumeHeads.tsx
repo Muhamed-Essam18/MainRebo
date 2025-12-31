@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Details from "./Details";
 import { ResumeIcons } from "../Icons/Icons";
-
+import cv from "../../assets/imgs/CV.jpg";
 const heads = [
   {
     type: "not-expandable",
@@ -13,6 +13,20 @@ const heads = [
      My journey reflects not just professional development, but a genuine obsession with programming, problem-solving, 
      and building practical systems that make work smoother and more effective. I’m committed to continuous learning, 
      taking on challenges, and creating environments where people and ideas can grow confidently and sustainably..`,
+    ],
+    titles: [],
+  },
+  {
+    type: "not-expandable",
+    id: "quickOverview",
+    head: { text: "Quick OverView", icon: ResumeIcons["quickOverview"] },
+    details: [
+      <img
+        key="cv"
+        src={cv}
+        alt="CV"
+        className="w-full max-w-3xl rounded-xl shadow-lg"
+      />,
     ],
     titles: [],
   },
@@ -127,7 +141,7 @@ heads.forEach((obj) =>
   })
 );
 
-const ResumeHeads = (props: { compId: string }) => {
+const ResumeHeads = (props: { compId: any }) => {
   const detailsRef = useRef<DetailsRefs>({});
   const [btntoogle, setBtntoogle] = useState<ToggleState>(initialState);
   useEffect(() => {
