@@ -1,8 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import { Navigation, Autoplay, EffectCards } from "swiper/modules";
+import { Navigation, Autoplay, EffectCards, Pagination } from "swiper/modules";
 import Reveal from "../../Containers/Animations/Reveal";
 import img1 from "../../assets/imgs/1.png";
 import img1Mobile from "../../assets/imgs/1-mobile.png";
@@ -72,8 +73,10 @@ const ProjectCard = () => {
   return (
     <Reveal>
       <Swiper
+        dir="rtl"
         slidesPerView={1}
-        spaceBetween={20}
+        spaceBetween={30}
+        loop={true}
         effect={"cards"}
         grabCursor={true}
         centeredSlides={true}
@@ -84,7 +87,7 @@ const ProjectCard = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Navigation, Autoplay, EffectCards]}
+        modules={[Navigation, Autoplay, EffectCards, Pagination]}
         className="mySwiper w-[90%] md:w-2/3  mx-auto"
       >
         {Proj.map((project) => (
