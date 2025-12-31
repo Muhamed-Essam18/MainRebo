@@ -11,7 +11,7 @@ const Me = () => {
         </h3>
 
         <Reveal>
-          <h1 className="md:text-[90px] text-[clamp(36px,7vw,56px)]  pb-2 font-bold bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="md:text-[90px] text-[clamp(33px,7vw,56px)]  pb-2 font-bold bg-linear-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
             {"<Muhamed Essam />"}
           </h1>
         </Reveal>
