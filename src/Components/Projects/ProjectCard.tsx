@@ -36,7 +36,7 @@ const Proj: Project[] = [
     img: img2,
     imgMobile: img2Mobile,
     title: "Y2B",
-    link: "",
+    link: "https://youth-2-business-aiesec-egypt.vercel.app/",
     tech: ["Html5", "CSS3", "Java Script"],
   },
   {
@@ -94,6 +94,7 @@ const ProjectCard = () => {
         {Proj.map((project) => (
           <SwiperSlide key={project.id}>
             <a
+              target="_blank"
               href={project.link}
               className={`bg-white rounded-2xl h-120 hover:shadow-xl flex flex-col justify-end relative transition-all duration-500 md:bg-(image:--desktop-img)   bg-(image:--mobile-img) `}
               style={
