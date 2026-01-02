@@ -28,7 +28,7 @@ const Proj: Project[] = [
     img: img1,
     imgMobile: img1Mobile,
     title: "YUMYUM",
-    link: "yumyum-sigma.vercel.app",
+    link: "https://yumyum-sigma.vercel.app/",
     tech: ["Html5", "CSS3", "Java Script", "Bootstrab"],
   },
   {
